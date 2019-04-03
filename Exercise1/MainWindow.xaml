@@ -37,5 +37,36 @@
                 <DataGrid Name="dgrCustomersQ3" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
             </Grid>
         </TabItem>
+        <TabItem Name="Q4" Header="Q4" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn4" Content="Button" Height="25" Width="75" Click="btn4_Click"/>
+                <DataGrid Name="dgrCustomersQ4" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
+        <TabItem Name="Q5" Header="Q5" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn5" Content="Total freight" Height="25" Width="75" Click="btn5_Click"/>
+                <Label Content="Total value of freight for the whole order: " HorizontalAlignment="Left" Margin="20" Grid.Row="1" VerticalAlignment="Top"/>
+                <TextBlock x:Name="totalTxBl" Text="" HorizontalAlignment="Left" Margin="300,20,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
+            </Grid>
+        </TabItem>
+        <TabItem Name="Q6" Header="Q6" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn6" Content="Button" Height="25" Width="75" Click="btn6_Click"/>
+                <DataGrid Name="dgrCustomersQ6" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

@@ -62,5 +62,42 @@ namespace Exercise1
 
             dgrCustomersQ3.ItemsSource = q.ToList();
         }
+        private void btn4_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Order_Details.
+                Where(p => p.Discount > 0).
+                OrderBy(p => p.Product.ProductName).
+                Select(p => new
+                {
+                    ProductName = p.Product.ProductName,
+                    DiscountGiven = p.Discount,
+                    OrderID = p.OrderID
+                });
+
+            dgrCustomersQ4.ItemsSource = q.ToList();
+        }
+
+        private void btn5_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Orders.Select(o => o.Freight);
+            totalTxBl.Text = string.Format($"€ {q.Sum()}");
+        }
+
+        private void btn6_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Products.
+                OrderBy(p => p.Category.CategoryName).
+                ThenBy(p => p.ProductName).
+                Select(p => new
+                {
+                    p.CategoryID,
+                    p.Category.CategoryName,
+                    p.ProductName,
+                    p.UnitPrice
+                });
+
+            dgrCustomersQ6.ItemsSource = q.ToList();
+        }
+
     }
 }
