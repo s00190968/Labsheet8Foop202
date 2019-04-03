@@ -48,5 +48,19 @@ namespace Exercise1
 
             dgrCustomersQ2.ItemsSource = q.ToList();
         }
+
+        private void btn3_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Products.
+                Where(p => p.UnitsInStock - p.UnitsOnOrder > 0).
+                OrderBy(p => p.ProductName).
+                Select(p => new
+                {
+                    Product = p.ProductName,
+                    Available = p.UnitsInStock - p.UnitsOnOrder
+                });
+
+            dgrCustomersQ3.ItemsSource = q.ToList();
+        }
     }
 }
