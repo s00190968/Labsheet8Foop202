@@ -99,5 +99,48 @@ namespace Exercise1
             dgrCustomersQ6.ItemsSource = q.ToList();
         }
 
+        private void btn7_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Orders.
+                GroupBy(p => p.CustomerID).
+                OrderByDescending(c => c.Count()).
+                Select(p => new
+                {
+                    CustomerId = p.Key,
+                    NumberOfOrders = p.Count()
+                });
+
+            dgrCustomersQ7.ItemsSource = q.ToList().Take(10);
+        }
+
+        private void btn8_Click(object sender, RoutedEventArgs e)
+        {
+            var q = from o in db.Orders
+                    group o by o.CustomerID into g
+                    join c in db.Customers on g.Key equals c.CustomerID
+                    orderby g.Count() descending
+                    select new
+                    {
+                        CustomerID = c.CustomerID,
+                        CompanyName = c.CompanyName,
+                        NumberOfOrders = c.Orders.Count
+                    };
+            dgrCustomersQ8.ItemsSource = q.ToList().Take(10);
+        }
+
+        private void btn9_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Customers.
+                Where(c => c.Orders.Count <1).
+                OrderBy(c => c.Orders.Count).
+                Select(c => new
+                {
+                    CustomerID = c.CustomerID,
+                    CompanyName = c.CompanyName,
+                    NumberOfOrders = c.Orders.Count
+                });
+
+            dgrCustomersQ9.ItemsSource = q.ToList();
+        }
     }
 }

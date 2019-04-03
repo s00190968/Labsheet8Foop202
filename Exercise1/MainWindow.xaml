@@ -68,5 +68,35 @@
                 <DataGrid Name="dgrCustomersQ6" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
             </Grid>
         </TabItem>
+        <TabItem Name="Q7" Header="Q7" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn7" Content="Button" Height="25" Width="75" Click="btn7_Click"/>
+                <DataGrid Name="dgrCustomersQ7" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
+        <TabItem Name="Q8" Header="Q8" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn8" Content="Button" Height="25" Width="75" Click="btn8_Click"/>
+                <DataGrid Name="dgrCustomersQ8" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
+        <TabItem Name="Q9" Header="Q9" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btn9" Content="Button" Height="25" Width="75" Click="btn9_Click"/>
+                <DataGrid Name="dgrCustomersQ9" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>
