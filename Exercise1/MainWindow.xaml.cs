@@ -20,9 +20,23 @@ namespace Exercise1
     /// </summary>
     public partial class MainWindow : Window
     {
+        NORTHWNDEntities db = new NORTHWNDEntities();
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void btnEx1_Click_1(object sender, RoutedEventArgs e)
+        {
+            var q = db.Customers.
+                GroupBy(c => c.Country).//c.country turns to key
+                OrderBy(c => c.Count()).
+                Select(c => new
+                {
+                    Country = c.Key,//this key here
+                    Count = c.Count()
+                });
+
+            dgrCustomersQ1.ItemsSource = q.ToList();
         }
     }
 }

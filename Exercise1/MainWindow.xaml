@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:Exercise1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <TabControl TabStripPlacement="Top">
+        <TabItem Name="Q1" Header="Q1" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+                <Button Name="btnEx1" Content="Button" Height="25" Width="75" Click="btnEx1_Click_1"/>
+                <DataGrid Name="dgrCustomersQ1" Grid.Row="1" Grid.Column="0" MinHeight="200"/>
+            </Grid>
+        </TabItem>
+
+    </TabControl>
 </Window>
