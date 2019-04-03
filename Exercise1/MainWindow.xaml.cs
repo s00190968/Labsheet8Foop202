@@ -38,5 +38,15 @@ namespace Exercise1
 
             dgrCustomersQ1.ItemsSource = q.ToList();
         }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            var q = db.Customers.
+                Where(c => c.Country == "Italy").
+                OrderBy(c => c.CompanyName).
+                Select(c => c);
+
+            dgrCustomersQ2.ItemsSource = q.ToList();
+        }
     }
 }
